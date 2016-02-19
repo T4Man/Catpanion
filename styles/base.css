@@ -1,0 +1,20 @@
+#mainArticle {
+  border: solid black 1px;
+}
+
+#mainArticle p {
+  padding: 3px;
+}
+
+#sidebar {
+  border: solid black 1px;
+  list-style: none;
+}
+
+#sidebar button {
+  font-size: 1em;
+  padding: 5px;
+  margin: 2px;
+}
+
+
