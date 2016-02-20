@@ -3,7 +3,10 @@ charView = {};
 
 charView.displayFiltered = function(){
   $('#charFilter').on('change', function(){
+    var $this = $(this).val();
     $('article').hide();
+
+    console.log($this);
     if ($(this).val() === "affList"){
       affList.forEach(function(el) {
         $('div.breedArticles').append(el.toHtml());
@@ -47,8 +50,3 @@ charView.displayFiltered = function(){
   });
 };
 charView.displayFiltered();
-
-
-
-
-

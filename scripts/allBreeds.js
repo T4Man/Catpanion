@@ -1,3 +1,9 @@
+function CatConstr (opts){
+  Object.keys(opts).forEach(function(e, index, keys) {
+    this[e] = opts[e];
+  },this);
+}
+
 var catArticles = [];
 var affList = [];
 var groomList = [];
@@ -17,22 +23,6 @@ function showAllCats(){
   $('div.breedArticles').append(a.toHtml());
   });
   $('#charList').fadeToggle(200);
-}
-
-function CatConstr (opts){
-  this.breed = opts.breed;
-  this.affectionate = opts.affectionate;
-  this.grooming = opts.grooming;
-  this.shedding = opts.shedding;
-  this.playfulness = opts.playfulness;
-  this.intelligence = opts.intelligence;
-  this.vocality = opts.vocality;
-  this.toleranceWithKids = opts.toleranceWithKids;
-  this.toleranceWithOtherAnimals = opts.toleranceWithOtherAnimals;
-  this.generalHealth = opts.generalHealth;
-  this.image = opts.image;
-  this.personality = opts.personality;
-  this.traits = opts.traits;
 }
 
 CatConstr.prototype.toHtml = function(){
@@ -64,7 +54,7 @@ filterGroomCats = function(){
 
 filterShedCats = function(){
   var filterList = catProperties.filter(function(el){
-    return el.shedding < 3;
+    return el.shedding > 4;
   });
   filterList.forEach(function(ele){
     shedList.push(new CatConstr(ele));
@@ -133,5 +123,3 @@ $(function(){
   $('.breedArticles').fadeToggle(200);
   });
 });
-
-
