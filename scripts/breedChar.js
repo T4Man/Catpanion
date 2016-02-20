@@ -7,39 +7,39 @@ charView.displayFiltered = function(){
     $('article').hide();
 
     console.log($this);
-    if ($(this).val() === "affList"){
+    if ($this === "affList"){
       affList.forEach(function(el) {
         $('div.breedArticles').append(el.toHtml());
       });
-    } else if ($(this).val() === "groomList"){
+    } else if ($this === "groomList"){
       groomList.forEach(function(el) {
         $('div.breedArticles').append(el.toHtml());
       });
-    } else if ($(this).val() === "shedList"){
+    } else if ($this === "shedList"){
       shedList.forEach(function(el) {
         $('div.breedArticles').append(el.toHtml());
       });
-    } else if ($(this).val() === "playList"){
+    } else if ($this === "playList"){
       playList.forEach(function(el) {
         $('div.breedArticles').append(el.toHtml());
       });
-    } else if ($(this).val() === "intelList"){
+    } else if ($this === "intelList"){
       intelList.forEach(function(el) {
         $('div.breedArticles').append(el.toHtml());
       });
-    } else if ($(this).val() === "vocalList"){
+    } else if ($this === "vocalList"){
       vocalList.forEach(function(el) {
         $('div.breedArticles').append(el.toHtml());
       });
-    } else if ($(this).val() === "kidsList"){
+    } else if ($this === "kidsList"){
       kidsList.forEach(function(el) {
         $('div.breedArticles').append(el.toHtml());
       });
-    } else if ($(this).val() === "animList"){
+    } else if ($this === "animList"){
       animList.forEach(function(el) {
         $('div.breedArticles').append(el.toHtml());
       });
-    } else if ($(this).val() === "healthList"){
+    } else if ($this === "healthList"){
       healthList.forEach(function(el) {
         $('div.breedArticles').append(el.toHtml());
       });
