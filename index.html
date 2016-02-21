@@ -2,7 +2,11 @@
   <head>
     <meta charset="UTF-8" />
     <title>Cat-Panion.com</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="vendor/styles/normalize.css">
     <link rel="stylesheet" type="text/css" href="styles/base.css">
+    <link rel="stylesheet" type="text/css" href="styles/layout.css">
+    <link rel="stylesheet" type="text/css" href="styles/modules.css">
     <script id="question-template" type="text/x-handlebars-template">
       {{#each this}}
       <p>{{text}}</p>
@@ -41,16 +45,30 @@
     </script>
   </head>
   <body>
-    <header>
-      <h1>Cat-Panion.Com</h1>
-      <h3>We can help find the best cat-panion for you!</h3>
+    <header class="site-header">
+      <div class="title">
+        <h1>Cat-Panion.Com</h1>
+      </div>
+      <nav class="main-nav">
+        <img id="burger" src="images/images/hamburger.png">
+        <ul>
+          <li><a href="#">Pet Adoption</a></li>
+          <li><a href="#">Pet Donation</a></li>
+          <li><a href="#">Pet Clinics</a></li>
+          <li><a href="#">Pet Nanny</a></li>
+        </ul>
+      </nav>
     </header>
-    <section id="mainSection">
-      <intro id="mainArticle">
-        <h4>This is the intro</h4>
-        <p>Chase the pig around the house favor packaging over toy nap all day. Poop in litter box, scratch the walls cat snacks hide when guests come over, yet gnaw the corn cob loves cheeseburgers. Flop over behind the couch, or nap all day leave dead animals as gifts hide from vacuum cleaner, meowing non stop for food yet lick yarn hanging out of own butt. Stretch chase mice, yet find empty spot in cupboard and sleep all day and climb leg fall over dead (not really but gets sympathy). Lounge in doorway throwup on your pillow, touch water with paw then recoil in horror so chase after silly colored fish toys around the house. Rub face on owner stick butt in face leave fur on owners clothes steal the warm chair right after you get up pee in the shoe meowing non stop for food. Pee in the shoe climb a tree, wait for a fireman jump to fireman then scratch his face kitty power!</p>
-      </intro>
-      <aside>
+
+    <main class"main-section">
+      <div class="cat-div"><img id="cat-cover" src="images/catfront2.png" />
+      <section class="subheading">
+        <h3>We can help find the best cat-panion for you.</h3>
+        <p>Choose the cat-panion selector, select by characteristics or see all the breeds.</p>
+      </section>
+      </div>
+    </main>
+      <section>
         <ul id="sidebar">
           <li><button id="selectorButton">Cat-Panion Selector</button></li>
           <li><button id="breedButton">See The Cats!</button></li>
@@ -71,17 +89,23 @@
               </li>
             </ul>
         </ul>
-      </aside>
-      <div class="questionBox">
-      </div>
-      <div class="breedArticles">
-      </div>
-      <div class="selectorCats">
-      </div>
-    </section>
+      </section>
+      <section>
+        <!--<div class="resultsPane"></div> Add this after refactor-->
+        <div class="questionBox">
+        </div>
+        <div class="breedArticles">
+        </div>
+        <div class="selectorCats">
+        </div>
+      </section>
+    <footer>Footer</footer>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/2.0.0/handlebars.js"></script>
     <script src="http://code.jquery.com/jquery-1.11.2.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+    <script src="vendor/scripts/html5sql.js"></script>
+    <script src="vendor/scripts/webdb.js"></script>
+    <script src="vendor/scripts/page.js"></script>
     <script src="scripts/questions.js"></script>
     <script src="scripts/catabase.js"></script>
     <script src="scripts/allBreeds.js"></script>

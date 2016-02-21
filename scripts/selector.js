@@ -3,7 +3,7 @@ var selectorView = {};
 var template = Handlebars.compile($('#question-template').html());
 var temp = template(questions);
 $('div.questionBox').append(temp);
-$('div.questionBox').hide();
+//$('div.questionBox').hide();  TODO: refactor later
 
 $('#selectorButton').click(function(){
   $('.breedArticles').hide();
@@ -25,7 +25,7 @@ selectorView.collect = function() {
     var affBreed = catProperties[i].breed;
       if (answers[0] === aff){
       matches.push(affBreed);
-      }
+      } console.log(matches);
     });
     $('catProperties').each(function(i){
     var groom = catProperties[i].grooming;
@@ -75,7 +75,7 @@ selectorView.collect = function() {
       if (answers[7] === health){
       matches.push(healthBreed);
       }
-    });
+    }); console.log(matches);
     $('.questionBox').hide();
     $('article.allBreeds').hide();
 
