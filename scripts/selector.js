@@ -13,10 +13,8 @@ $('#selectorButton').click(function(){
 answers = [];
 matches = [];
 
-
 selectorView.collect = function() {
   $('#submitButton').click(function(e){
-    console.log('submit');
     var selected = $('input[type="radio"]:checked').each(function(){
     var userInput = parseInt($(this).attr("value").toString(), 10);
     answers.push(userInput);
@@ -27,7 +25,7 @@ selectorView.collect = function() {
     var affBreed = catProperties[i].breed;
       if (answers[0] === aff){
       matches.push(affBreed);
-      }
+      } console.log(matches);
     });
     $('catProperties').each(function(i){
     var groom = catProperties[i].grooming;
@@ -77,7 +75,7 @@ selectorView.collect = function() {
       if (answers[7] === health){
       matches.push(healthBreed);
       }
-    });
+    }); console.log(matches);
     $('.questionBox').hide();
     $('article.allBreeds').hide();
 
