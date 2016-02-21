@@ -3,7 +3,7 @@ var selectorView = {};
 var template = Handlebars.compile($('#question-template').html());
 var temp = template(questions);
 $('div.questionBox').append(temp);
-$('div.questionBox').hide();
+//$('div.questionBox').hide();  TODO: refactor later
 
 $('#selectorButton').click(function(){
   $('.breedArticles').hide();
@@ -13,8 +13,10 @@ $('#selectorButton').click(function(){
 answers = [];
 matches = [];
 
+
 selectorView.collect = function() {
   $('#submitButton').click(function(e){
+    console.log('submit');
     var selected = $('input[type="radio"]:checked').each(function(){
     var userInput = parseInt($(this).attr("value").toString(), 10);
     answers.push(userInput);
