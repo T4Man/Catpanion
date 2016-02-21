@@ -3,7 +3,7 @@ function CatConstr (opts){
     this[e] = opts[e];
   },this);
 }
-/* //UNDER CONSTRUCTION
+ /*//UNDER CONSTRUCTION
 CatConstr.all = [];
 
 CatConstr.createTable = function(callback) {
@@ -46,7 +46,12 @@ CatConstr.showAllCats = function(callback) {
     }
   });
 };
+//for use by breedChar.js
+CatConstr.allCategories = function(callback) {
+  webDB.execute('SELECT DISTINCT category FROM articles;', callback);
+};
 */
+
 var catArticles = [];
 var affList = [];
 var groomList = [];
