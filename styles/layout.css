@@ -1,0 +1,73 @@
+
+.main-nav ul {
+  display: none;
+  position: absolute;
+  list-style: none;
+  top: 50px;
+}
+
+.main-nav:hover ul {
+  display: block;
+}
+
+.main-nav li {
+  padding: .3em 6em .2em 2em;
+  font-size: 1.2em;
+}
+
+.subheading {
+  width: auto;
+  padding-left: 2%;
+  position: absolute;
+  font-size: .8em;
+  bottom: 10%;
+  width: 70%;
+  height: auto;
+  outline:  solid 2px red;
+}
+
+h3 {
+  margin: 0;
+}
+@media only screen and (min-width: 440px) {
+
+  h1 {
+    font-size: 2em;
+  }
+  #burger {
+    padding: 0 3% 25% 35%;
+  }
+
+  .main-nav ul {
+    margin-top: 5%;
+  }
+  .subheading {
+    font-size: 1.2em;
+    bottom: 40%;
+  }
+}
+
+@media only screen and (min-width: 641px) {
+
+  h1 {
+    font-size: 2.5em;
+  }
+  #burger {
+    display: none;
+  }
+  .main-nav ul {
+    display: block;
+    position: absolute;
+    top: 40%;
+  }
+  .main-nav li {
+    display: inline;
+    padding: 0 3px;
+    font-size: 1.5em;
+  }
+  .subheading {
+    font-size: 1.25em;
+    bottom: 40%;
+  }
+
+}
