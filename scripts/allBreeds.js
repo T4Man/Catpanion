@@ -3,7 +3,50 @@ function CatConstr (opts){
     this[e] = opts[e];
   },this);
 }
+/* //UNDER CONSTRUCTION
+CatConstr.all = [];
 
+CatConstr.createTable = function(callback) {
+  webDB.execute(
+    'CREATE TABLE IF NOT EXISTS catArticles (' +
+      'id INTEGER PRIMARY KEY, ' +
+      'breed VARCHAR(255) NOT NULL, ' +
+      'affectionate INTEGER, ' +
+      'grooming INTEGER, ' +
+      'shedding INTEGER, ' +
+      'playfulness INTEGER, ' +
+      'intelligence INTEGER, ' +
+      'vocality INTEGER, ' +
+      'toleranceWithKids INTEGER, ' +
+      'toleranceWithOtherAnimals INTEGER, ' +
+      'generalHealth INTEGER, ' +
+      'image TEXT NOT NULL, ' +
+      'personality TEXT NOT NULL, ' +
+      'traits TEXT NOT NULL);',
+    callback
+  );
+};
+
+CatConstr.showAllCats = function(callback) {
+  webDB.execute('SELECT * FROM catArticles ORDER BY breed ASC', function(rows){
+    if (rows.length) {
+      catArticle.loadAll(rows);
+      callback();
+    } else {
+      $.getJSON('/data/catabase.json', function(rawData){
+        rawData.forEach(function(item){
+          var article = new CatConstr(item);
+          article.insertRecord();
+        });
+        webDB.execute('SELECT * FROM catArticles', function(row) {
+          CatConstr.loadAll(rows);
+          callback();
+        });
+      });
+    }
+  });
+};
+*/
 var catArticles = [];
 var affList = [];
 var groomList = [];
