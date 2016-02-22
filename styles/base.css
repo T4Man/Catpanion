@@ -1,20 +1,24 @@
-#mainArticle {
-  border: solid black 1px;
+
+body {
+  padding: 1%;
+  outline: solid 2px blue;
 }
-
-#mainArticle p {
-  padding: 3px;
+h1, h3 {
+  font-size: 1.5em;
+  font-family: "Rosarivo", Serif;
 }
-
-#sidebar {
-  border: solid black 1px;
-  list-style: none;
+p {
+  font-family: "Lato", sans-serif;
 }
-
-#sidebar button {
-  font-size: 1em;
-  padding: 5px;
-  margin: 2px;
+@font-face {
+  font-family: "Rosarivo";
+  src: : url ("styles/fonts/rosarivo/Rosarivo-Regular.ttf").format("truetype");
+  font-weight: normal;
+  font-style: normal;
 }
-
-
+@font-face {
+  font-family: "Lato";
+  src: : url ("styles/fonts/lato/Lato-Regular.ttf").format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
