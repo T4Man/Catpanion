@@ -5,8 +5,8 @@ function CatConstr (opts){
     this[e] = opts[e];
   },this);
 }
- //UNDER CONSTRUCTION-TROUBLESHOOT THIS 
-/*
+ //UNDER CONSTRUCTION-TROUBLESHOOT THIS
+
 CatConstr.all = [];
 
 CatConstr.createTable = function(callback) {
@@ -54,7 +54,7 @@ CatConstr.fetchAllCats = function(callback) {
       CatConstr.loadAll(rows);
       callback();
     } else {
-      $.getJSON('catabase.json', function(rawData){
+      $.getJSON('scripts/catabase.json', function(rawData){
         rawData.forEach(function(item){
           var article = new CatConstr(item);
           article.insertRecord();
@@ -75,7 +75,7 @@ CatConstr.fetchAllCats();
 CatConstr.allCategories = function(callback) {
   webDB.execute('SELECT DISTINCT category FROM catArticles;', callback);
 };
-*/
+/*
 
 var catArticles = [];
 var affList = [];
@@ -196,6 +196,6 @@ $(function(){
   $('.breedArticles').fadeToggle(200);
   });
 });
-
+*/
   module.CatConstr = CatConstr;
 })(window);
