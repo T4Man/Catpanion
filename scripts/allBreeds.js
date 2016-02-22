@@ -5,79 +5,7 @@ function CatConstr (opts){
     this[e] = opts[e];
   },this);
 }
- //UNDER CONSTRUCTION-TROUBLESHOOT THIS
 
-CatConstr.all = [];
-
-CatConstr.createTable = function(callback) {
-  webDB.execute(
-    'CREATE TABLE IF NOT EXISTS catArticles (' +
-      'id INTEGER PRIMARY KEY, ' +
-      'breed VARCHAR(255) NOT NULL, ' +
-      'affectionate INTEGER, ' +
-      'grooming INTEGER, ' +
-      'shedding INTEGER, ' +
-      'playfulness INTEGER, ' +
-      'intelligence INTEGER, ' +
-      'vocality INTEGER, ' +
-      'toleranceWithKids INTEGER, ' +
-      'toleranceWithOtherAnimals INTEGER, ' +
-      'generalHealth INTEGER, ' +
-      'image TEXT NOT NULL, ' +
-      'personality TEXT NOT NULL, ' +
-      'traits TEXT NOT NULL);',
-    callback
-  );
-};
-
-CatConstr.prototype.insertRecord = function(callback) {
-  webDB.execute(
-    [
-      {
-        'sql': 'INSERT INTO catArticles (breed, affectionate, grooming, shedding, playfulness, intelligence, vocality, toleranceWithKids, toleranceWithOtherAnimals, generalHealth, image, personality, traits) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);',
-        'data': [this.breed, this.affectionate, this.grooming, this.shedding, this.playfulness, this.intelligence, this.vocality, this.toleranceWithKids, this.toleranceWithOtherAnimals, this.generalHealth, this.image, this.personality, this.traits],
-      }
-    ],
-    callback
-  );
-};
-
-CatConstr.loadAll = function(rows) {
-  CatConstr.all = rows.map(function(ele) {
-    return new CatConstr(ele);
-  });
-};
-
-CatConstr.fetchAllCats = function(callback) {
-  webDB.execute('SELECT * FROM catArticles ORDER BY breed ASC', function(rows){
-    if (rows.length) {
-      CatConstr.loadAll(rows);
-      callback();
-    } else {
-      $.getJSON('scripts/catabase.json', function(rawData){
-        rawData.forEach(function(item){
-          var article = new CatConstr(item);
-          article.insertRecord();
-        });
-        webDB.execute('SELECT * FROM catArticles', function(rows) {
-          CatConstr.loadAll(rows);
-          callback();
-        });
-      });
-    }
-  });
-};
-
-CatConstr.createTable();
-CatConstr.fetchAllCats();
-
-//for use by breedChar.js
-CatConstr.allCategories = function(callback) {
-  webDB.execute('SELECT DISTINCT category FROM catArticles;', callback);
-};
-/*
-
-var catArticles = [];
 var affList = [];
 var groomList = [];
 var shedList = [];
@@ -88,11 +16,39 @@ var kidsList = [];
 var animList = [];
 var healthList = [];
 
+CatConstr.all = [];
+
+CatConstr.getAll = function() {
+  $.getJSON('scripts/catabase.json', function(data){
+    localStorage.rawData = JSON.stringify(data);
+    CatConstr.loadAll(data);
+
+  });
+};
+
+CatConstr.loadAll = function(rawData) {
+  CatConstr.all = rawData.map(function(ele){
+    return new CatConstr(ele);
+  });
+};
+
+CatConstr.fetchAll = function() {
+  if (localStorage.rawData) {
+    CatConstr.loadAll(JSON.parse(localStorage.rawData));
+  }else {
+    $.getJSON('scripts/catabase.json', function(rawData) {
+      CatConstr.loadAll(rawData);
+      localStorage.rawData = JSON.stringify(rawData);
+    });
+  }
+};
+
+CatConstr.fetchAll();
 $('.breedArticles').hide();
 $('#charList').hide();
 
 function showAllCats(){
-  catArticles.forEach(function(a) {
+  CatConstr.all.forEach(function(a) {
   $('div.breedArticles').append(a.toHtml());
   });
   $('#charList').fadeToggle(200);
@@ -103,12 +59,8 @@ CatConstr.prototype.toHtml = function(){
   return template(this);
 };
 
-catProperties.forEach(function(ele){
-  catArticles.push(new CatConstr(ele));
-});
-
 filterAffectCats = function(){
-  var filterList = catProperties.filter(function(el){
+  var filterList = CatConstr.all.filter(function(el){
     return el.affectionate > 4;
   });
   filterList.forEach(function(ele){
@@ -196,6 +148,5 @@ $(function(){
   $('.breedArticles').fadeToggle(200);
   });
 });
-*/
   module.CatConstr = CatConstr;
 })(window);
