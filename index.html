@@ -9,7 +9,7 @@
     <link rel="stylesheet" type="text/css" href="styles/modules.css">
     <script id="question-template" type="text/x-handlebars-template">
       {{#each this}}
-      <p>{{text}}</p>
+      <p id="{{id}}">{{text}}</p>
       <form id="selectorForm">
         <input type="radio" name="question" value="5">{{answer1}}<br>
         <input type="radio" name="question" value="4">{{answer2}}<br>
@@ -103,12 +103,14 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/2.0.0/handlebars.js"></script>
     <script src="http://code.jquery.com/jquery-1.11.2.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+    <script src="scripts/catabase.json"></script>
+    <script src="scripts/catabase.js"></script>
     <script src="vendor/scripts/html5sql.js"></script>
     <script src="vendor/scripts/webdb.js"></script>
     <script src="vendor/scripts/page.js"></script>
     <script src="scripts/questions.js"></script>
-    <script src="scripts/catabase.js"></script>
     <script src="scripts/allBreeds.js"></script>
+    <script src="scripts/catArticleController.js"></script>
     <script src="scripts/breedChar.js"></script>
     <script src="scripts/selector.js"></script>
   </body>

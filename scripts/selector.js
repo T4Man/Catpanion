@@ -3,7 +3,7 @@ var selectorView = {};
 var template = Handlebars.compile($('#question-template').html());
 var temp = template(questions);
 $('div.questionBox').append(temp);
-//$('div.questionBox').hide();  TODO: refactor later
+$('div.questionBox').hide();  //TODO: refactor later
 
 $('#selectorButton').click(function(){
   $('.breedArticles').hide();

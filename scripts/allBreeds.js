@@ -1,9 +1,12 @@
+(function(module) {
+
 function CatConstr (opts){
   Object.keys(opts).forEach(function(e, index, keys) {
     this[e] = opts[e];
   },this);
 }
- /*//UNDER CONSTRUCTION
+ //UNDER CONSTRUCTION-TROUBLESHOOT THIS 
+/*
 CatConstr.all = [];
 
 CatConstr.createTable = function(callback) {
@@ -27,18 +30,36 @@ CatConstr.createTable = function(callback) {
   );
 };
 
-CatConstr.showAllCats = function(callback) {
+CatConstr.prototype.insertRecord = function(callback) {
+  webDB.execute(
+    [
+      {
+        'sql': 'INSERT INTO catArticles (breed, affectionate, grooming, shedding, playfulness, intelligence, vocality, toleranceWithKids, toleranceWithOtherAnimals, generalHealth, image, personality, traits) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);',
+        'data': [this.breed, this.affectionate, this.grooming, this.shedding, this.playfulness, this.intelligence, this.vocality, this.toleranceWithKids, this.toleranceWithOtherAnimals, this.generalHealth, this.image, this.personality, this.traits],
+      }
+    ],
+    callback
+  );
+};
+
+CatConstr.loadAll = function(rows) {
+  CatConstr.all = rows.map(function(ele) {
+    return new CatConstr(ele);
+  });
+};
+
+CatConstr.fetchAllCats = function(callback) {
   webDB.execute('SELECT * FROM catArticles ORDER BY breed ASC', function(rows){
     if (rows.length) {
-      catArticle.loadAll(rows);
+      CatConstr.loadAll(rows);
       callback();
     } else {
-      $.getJSON('/data/catabase.json', function(rawData){
+      $.getJSON('catabase.json', function(rawData){
         rawData.forEach(function(item){
           var article = new CatConstr(item);
           article.insertRecord();
         });
-        webDB.execute('SELECT * FROM catArticles', function(row) {
+        webDB.execute('SELECT * FROM catArticles', function(rows) {
           CatConstr.loadAll(rows);
           callback();
         });
@@ -46,9 +67,13 @@ CatConstr.showAllCats = function(callback) {
     }
   });
 };
+
+CatConstr.createTable();
+CatConstr.fetchAllCats();
+
 //for use by breedChar.js
 CatConstr.allCategories = function(callback) {
-  webDB.execute('SELECT DISTINCT category FROM articles;', callback);
+  webDB.execute('SELECT DISTINCT category FROM catArticles;', callback);
 };
 */
 
@@ -171,3 +196,6 @@ $(function(){
   $('.breedArticles').fadeToggle(200);
   });
 });
+
+  module.CatConstr = CatConstr;
+})(window);
