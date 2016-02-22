@@ -2,20 +2,20 @@ var selectorView = {};
 
 var template = Handlebars.compile($('#question-template').html());
 var temp = template(questions);
-$('#question-section').show();
+
 $('#question-box').append(temp);
 $('#wrapper').css({
   width: $('#question-box')[0].scrollWidth
 });
 //$('div.questionBox').hide();  TODO: refactor later
 
+$('div.questionBox').append(temp);
+$('div.questionBox').hide();  //TODO: refactor later
+
 $('#selectorButton').click(function(){
   $('.breedArticles').hide();
   $('#question-box').fadeToggle(200);
 });
-
-answers = [];
-matches = [];
 
 answers = [];
 matches = [];
