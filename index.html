@@ -53,40 +53,40 @@
         <img id="burger" src="images/images/hamburger.png">
         <ul>
           <li><a href="#">Pet Adoption</a></li>
-          <li><a href="#">Pet Donation</a></li>
+          <li><a id="donate-button" href="#">Pet Donation</a></li>
           <li><a href="#">Pet Clinics</a></li>
           <li><a href="#">Pet Nanny</a></li>
         </ul>
       </nav>
     </header>
-
-    <main class"main-section">
+      <div id="map"></div>
+    <main id="main-section">
       <div class="cat-div"><img id="cat-cover" src="images/catfront2.png" />
       <section class="subheading">
         <h3 class="intro">We can help find the best cat-panion for you.</h3>
         <p class="intro-p">Choose the cat-panion selector, select by chracteristics or see all the breeds.</p>
         <div id="wrapper"><div id="question-box"></div></div>
       </section>
-
       </div>
     </main>
+
       <section>
         <ul id="sidebar">
           <li><button id="selectorButton">Cat-Panion Selector</button></li>
           <li><button id="breedButton">See The Cats!</button></li>
             <ul id="charList">
               <li>
-                <select id="charFilter">
+                <select id="char-filter">
                   <option>-- Filter by Characteristic --</option>
-                  <option value="affList" selected="selected">Most Affectionate</option>
-                  <option value="groomList" selected="selected">Less Grooming</option>
-                  <option value="shedList" selected="selected">Less Shedding</option>
-                  <option value="playList" selected="selected">Most Playful</option>
-                  <option value="intelList" selected="selected">Most Intelligent</option>
-                  <option value="vocalList" selected="selected">Most Vocal</option>
-                  <option value="kidsList" selected="selected">Most Tolerant of Children</option>
-                  <option value="animList" selected="selected">Most Tolerant of Other Animals</option>
-                  <option value="healthList" selected="selected">Less Prone to Illness</option>
+                  <option value="affectionate" selected="selected">Most Affectionate</option>
+                  <option value="grooming" selected="selected">Less Grooming</option>
+                  <option value="shedding" selected="selected">Less Shedding</option>
+                  <option value="playfulness" selected="selected">Most Playful</option>
+                  <option value="intelligence" selected="selected">Most Intelligent</option>
+                  <option value="vocality" selected="selected">Most Vocal</option>
+                  <option value="toleranceWithKids" selected="selected">Most Tolerant of Children</option>
+                  <option value="toleranceWithOtherAnimals" selected="selected">Most Tolerant of Other Animals</option>
+                  <option value="generalHealth" selected="selected">Less Prone to Illness</option>
                 </select>
               </li>
             </ul>
@@ -96,15 +96,18 @@
         <!--<div class="resultsPane"></div> Add this after refactor-->
         <!--div class="questionBox">
         </div-->
-        <div class="breedArticles">
+        <div class="breed-articles">
         </div>
-        <div class="selectorCats">
+        <div class="selector-cats">
         </div>
       </section>
     <footer>Footer</footer>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/2.0.0/handlebars.js"></script>
     <script src="http://code.jquery.com/jquery-1.11.2.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCNGaZBoUTqLZleHdf3OvLhjl3-mTDgvhc&libraries=places" async defer></script>
+    <script src="scripts/navController.js"></script>
+    <script src="scripts/map.js"></script>
     <script src="scripts/catabase.json"></script>
     <script src="scripts/catabase.js"></script>
     <script src="vendor/scripts/html5sql.js"></script>
@@ -113,8 +116,7 @@
     <script src="scripts/questions.js"></script>
     <script src="scripts/allBreeds.js"></script>
     <script src="scripts/catArticleController.js"></script>
-    <script src="scripts/breedChar.js"></script>
     <script src="scripts/selector.js"></script>
-    <script src="vendor/scripts/jquery.bxslider.min.js"></script>
+
   </body>
 </html>
