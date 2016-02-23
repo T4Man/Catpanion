@@ -15,7 +15,7 @@ $('#clinic-button').on('click', function(){
 $('#adopt-button').on('click', function(){
   $('.cat-div').hide();
   $('#map').fadeIn(200);
-  initMap('animal shelter');
+  initShelterMap();
 });
 
 $('#sitter-button').on('click', function(){
