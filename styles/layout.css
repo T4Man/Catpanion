@@ -1,22 +1,21 @@
-
+h3 {
+  margin: 0;
+}
 .main-nav ul {
   display: none;
   position: absolute;
   list-style: none;
   top: 50px;
 }
-
 .main-nav:hover ul {
   display: block;
 }
-
 .main-nav li {
-  padding: .3em 6em .2em 2em;
-  font-size: 1.2em;
+  padding: .3em 6em .1em 2em;
+  font-size: 1em;
+  outline:  solid 2px red;
 }
-
 .subheading {
-  width: auto;
   padding-left: 2%;
   position: absolute;
   font-size: .8em;
@@ -24,30 +23,83 @@
   width: 70%;
   height: auto;
 }
-
-h3 {
-  margin: 0;
+#question-section {
+  position: relative;
+  width: auto;
+  bottom: 10%;
+  padding-left: 2%;
 }
-@media only screen and (min-width: 440px) {
+#question-box {
+  font-size: 1em;
+  width: 80%;
+  height: 140%;
+  outline:  solid 2px red;
+  position: absolute;
+  border: none;
+  overflow-y:auto;
+  background-color:#eee;
+  bottom: 0;
+  padding: 5px;
+}
+#question-box::-webkit-scrollbar-thumb {
+    background-color: #000;
+}
+#question-box::-webkit-scrollbar {
+    width: 14px;
+    height: 6px;
+}
+#question-box::-webkit-scrollbar-button:start:decrement,
+#question-box::-webkit-scrollbar-button:end:increment {
+  height: 30px;
+  display: block;
+  background-color:#999;
+}
+#question-box::-webkit-scrollbar-track-piece {
+  background-color: #666;
+  -webkit-border-radius: 0px;
+}
 
+#question-box::-webkit-scrollbar-thumb:vertical {
+  height: 50px;
+  background-color: #000;
+  -webkit-border-radius: 6px;
+}
+
+
+@media only screen and (min-width: 440px) {
   h1 {
     font-size: 2em;
+    }
+  .main-nav ul {
+    margin-top: 5%;
+  }
+  .main-nav li {
+    padding: .1em 6em .3em 2em;
+    font-size: 1.2em;
+    outline:  solid 2px red;
+  }
+  .subheading {
+    font-size: 1.2em;
+    bottom: 5%;
   }
   #burger {
     padding: 0 3% 25% 35%;
   }
-
-  .main-nav ul {
-    margin-top: 5%;
-  }
-  .subheading {
-    font-size: 1.2em;
-    bottom: 40%;
+  #question-box {
+    font-size: 1em;
+    width: 80%;
+    height: 140%;
+    outline:  solid 2px red;
+    position: absolute;
+    border: none;
+    overflow-y:auto;
+    background-color:#eee;
+    bottom: 0;
+    padding: 5px;
   }
 }
 
 @media only screen and (min-width: 641px) {
-
   h1 {
     font-size: 2.5em;
   }
@@ -66,7 +118,25 @@ h3 {
   }
   .subheading {
     font-size: 1.25em;
-    bottom: 40%;
+    bottom: 20%;
   }
+  #question-box {
+    font-size: 1em;
+    width: 80%;
+    height: 180%;
+    outline:  solid 2px red;
+    position: absolute;
+    border: none;
+    overflow-y:auto;
+    background-color:#eee;
+    bottom: 0;
+    padding: 5px;
+  }
+}
 
+@media only screen and (min-width: 743px) {
+  #question-box {
+    width: 80%;
+    height: 180%;
+  }
 }

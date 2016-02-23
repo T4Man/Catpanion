@@ -2,25 +2,22 @@
   position: absolute;
   top: 1%;
   right: 10%;
-  padding: 0 3% 30% 10%;
+  outline: solid 2px red;
+  padding: 0 3% 25% 35%;
 }
-
 #cat-cover {
   width: 100%;
   height: 0 auto;
 }
-
 #sidebar button {
   font-size: 1em;
   padding: 5px;
   margin: 2px;
 }
-
 #sidebar {
   border: solid black 1px;
   list-style: none;
 }
-
 .cat-div {
   background: linear-gradient(
     to bottom,
@@ -38,7 +35,6 @@
   width: 60%;
   padding-left: 20px;
 }
-
 .site-header {
   position: relative;
   width: 100%;

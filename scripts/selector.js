@@ -2,12 +2,19 @@ var selectorView = {};
 
 var template = Handlebars.compile($('#question-template').html());
 var temp = template(questions);
+
+$('#question-box').append(temp);
+$('#wrapper').css({
+  width: $('#question-box')[0].scrollWidth
+});
+//$('div.questionBox').hide();  TODO: refactor later
+
 $('div.questionBox').append(temp);
 $('div.questionBox').hide();  //TODO: refactor later
 
 $('#selectorButton').click(function(){
   $('.breedArticles').hide();
-  $('div.questionBox').fadeToggle(200);
+  $('#question-box').fadeToggle(200);
 });
 
 answers = [];

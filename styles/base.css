@@ -2,7 +2,22 @@
 body {
   padding: 1%;
 }
-
-h1 {
+h1, h3 {
   font-size: 1.5em;
+  font-family: "Rosarivo", Serif;
+}
+p {
+  font-family: "Lato", sans-serif;
+}
+@font-face {
+  font-family: "Rosarivo";
+  src: : url ("styles/fonts/rosarivo/Rosarivo-Regular.ttf").format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Lato";
+  src: : url ("styles/fonts/lato/Lato-Regular.ttf").format("truetype");
+  font-weight: normal;
+  font-style: normal;
 }
