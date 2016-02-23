@@ -34,13 +34,12 @@ CatConstr.fetchAll = function() {
 };
 
 CatConstr.fetchAll();
-$('#charList').hide();
+
 
 function showAllCats(){
   CatConstr.all.forEach(function(a) {
   $('.breed-articles').append(a.toHtml());
   });
-  $('#charList').fadeToggle(200);
 }
 
 CatConstr.prototype.toHtml = function(){
@@ -51,8 +50,8 @@ CatConstr.prototype.toHtml = function(){
 $(function(){
   showAllCats();
   $('#breedButton').click (function(){
-    $('question-box').hide();
-    $('.selector-cats').hide();
+    //$('question-box').hide();
+    //$('.selector-cats').hide();
   $('.breed-articles').fadeToggle(200);
   });
 });
