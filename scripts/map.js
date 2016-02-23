@@ -1,10 +1,9 @@
+
 var map;
 var service;
 var infowindow;
 
-
-
-function initMap() {
+function initMap(searchParam) {
   var burien = {lat: 47.466575, lng: -122.341207};
       map = new google.maps.Map(document.getElementById('map'), {
     center: burien,
@@ -12,12 +11,27 @@ function initMap() {
   });
     infowindow = new google.maps.InfoWindow();
 
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(function(position) {
+      var pos = {
+        lat: position.coords.latitude,
+        lng: position.coords.longitude
+      };
+
+      infowindow.setPosition(pos);
+      infowindow.setContent('Location found.');
+      map.setCenter(pos);
+    }, function() {
+      handleLocationError(true, infoWindow, map.getCenter());
+    });
+  } else {
+    handleLocationError(false, infoWindow, map.getCenter());
+  }
   var request = {
     location: burien,
     radius: '10000',
-    query: 'animal rescue'
+    query: searchParam
   };
-
   service = new google.maps.places.PlacesService(map);
   service.textSearch(request, callback);
 }
@@ -36,7 +50,6 @@ function createMarker(place) {
     map: map,
     position: place.geometry.location
   });
-
   google.maps.event.addListener(marker, 'click', function() {
     infowindow.setContent(place.name);
     infowindow.open(map, this);

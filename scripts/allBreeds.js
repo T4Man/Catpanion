@@ -50,8 +50,6 @@ CatConstr.prototype.toHtml = function(){
 $(function(){
   showAllCats();
   $('#breedButton').click (function(){
-    //$('question-box').hide();
-    //$('.selector-cats').hide();
   $('.breed-articles').fadeToggle(200);
   });
 });
