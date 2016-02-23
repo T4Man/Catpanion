@@ -1,6 +1,25 @@
 $('#map').hide();
+
 $('#donate-button').on('click', function(){
   $('.cat-div').hide();
   $('#map').fadeIn(200);
-  initMap();
+  initMap('animal rescue');
+});
+
+$('#clinic-button').on('click', function(){
+  $('.cat-div').hide();
+  $('#map').fadeIn(200);
+  initMap('veterinarian');
+});
+
+$('#adopt-button').on('click', function(){
+  $('.cat-div').hide();
+  $('#map').fadeIn(200);
+  initMap('animal shelter');
+});
+
+$('#sitter-button').on('click', function(){
+  $('.cat-div').hide();
+  $('#map').fadeIn(200);
+  initMap('pet sitter');
 });
