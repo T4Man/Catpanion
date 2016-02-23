@@ -34,6 +34,7 @@ function initMap(searchParam) {
   };
   service = new google.maps.places.PlacesService(map);
   service.textSearch(request, callback);
+  details = service.placeDetails;
 }
 
 function callback(results, status) {
@@ -50,8 +51,25 @@ function createMarker(place) {
     map: map,
     position: place.geometry.location
   });
+  marker.setPlace({
+    placeId: place.place_id,
+    location: place.geometry.location,
+  });
+  marker.setVisible(true);
   google.maps.event.addListener(marker, 'click', function() {
-    infowindow.setContent(place.name);
+    infowindow.setContent('<div><strong>' + place.name + '</strong><br>' +
+      place.formatted_address);
     infowindow.open(map, this);
   });
 }
+
+function getDetails(){
+  $.ajax({
+    type: "GET",
+    url: "https://maps.googleapis.com/maps/api/place/details/json?placeid=ChIJN1t_tDeuEmsRUsoyG83frY4&key=AIzaSyCNGaZBoUTqLZleHdf3OvLhjl3-mTDgvhc",
+    success: function(data, message, xhr){
+      console.log(data);
+    }
+    //JSON.parse(localStorage.rawData);
+  })
+};
