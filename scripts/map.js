@@ -5,7 +5,6 @@ var infowindow;
 
 function initMap(searchParam) {
   var burien = {lat: 47.466575, lng: -122.341207};
-  // var pos;
       map = new google.maps.Map(document.getElementById('map'), {
     center: burien,
     zoom: 11
