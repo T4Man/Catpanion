@@ -15,7 +15,7 @@ Shelter.requestShelterList = function(location, callback) {
   .error(function(err) {console.log('Error: ' + JSON.stringify(err));});
 }
 
-Shelter.requestShelterList('98026', function(data) {
+Shelter.requestShelterList('98109', function(data) {
   var shelterList = data.petfinder.shelters.shelter;
   Shelter.loadAll(shelterList);
 });
