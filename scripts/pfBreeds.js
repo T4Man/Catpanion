@@ -1,12 +1,13 @@
-function Breed(opts) {
+function PfBreed(opts) {
   Object.keys(opts).forEach(function(e, index, keys) {
     this[e] = opts[e];
   },this);
 }
 
-Breed.all = [];
+PfBreed.all = [];
 
-Breed.requestBreeds = function(callback) {
+PfBreed.requestBreeds = function(callback) {
+  var petFinderKey = 'fc112f63a02888e709b52b7778826df7';
   var petFinderApi = 'http://api.petfinder.com/breed.list?format=json&key=' + petFinderKey + '&animal=cat&location=98026&callback=?'
   $.getJSON(petFinderApi)
     .done(function(petApiData) {callback(petApiData);})
@@ -14,13 +15,13 @@ Breed.requestBreeds = function(callback) {
     .error(function(err) {console.log('Error: ' + err);});
 }
 
-Breed.loadAll = function(list) {
-  Breed.all = list.map(function(ele) {
+PfBreed.loadAll = function(list) {
+  PfBreed.all = list.map(function(ele) {
     return ele.$t
   })
 }
 
-Breed.requestBreeds(function(data){
+PfBreed.requestBreeds(function(data){
   var breedList = data.petfinder.breeds.breed;
-  Breed.loadAll(breedList);
+  PfBreed.loadAll(breedList);
 });
