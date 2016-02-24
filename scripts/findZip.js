@@ -17,7 +17,3 @@ PostalCode.requestList = function(lat, lng, callback) {
 
 var inLat = 47.6201451;
 var inLng = -122.3298646;
-
-// PostalCode.requestlist(inLat, inLng, function(zipData) {
-//   console.log(zipData);
-// });

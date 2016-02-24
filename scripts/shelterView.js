@@ -5,10 +5,6 @@ var map,
 shelterView.zipHere = 0;
 
 shelterView.createMarker = function(loc, placeContent, map, infowindow) {
-  console.log('loc is ' + loc);
-  console.log('placeContent is ' + placeContent);
-  console.log('map is ' + map);
-  console.log('infowindow' + infowindow);
   var marker = new google.maps.Marker({
     map: map,
     position: loc,
