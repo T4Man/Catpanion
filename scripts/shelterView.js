@@ -6,8 +6,8 @@ shelterView.createMarker = function(loc, placeContent, map, infowindow) {
   var marker = new google.maps.Marker({
     map: map,
     position: loc,
-    visible: true
   });
+  marker.setVisible(true);
   google.maps.event.addListener(marker, 'click', function() {
     infowindow.setContent(placeContent);
     infowindow.open(map, this);
@@ -40,14 +40,8 @@ function initShelterMap() {
   };
 
   Shelter.all.forEach(function(cur) {
-    // var shelterLoc = {
-    //   lat: parseFloat(cur.latitude),
-    //   lng: parseFloat(cur.longitude)
-    // };
     var shelterLoc = new google.maps.LatLng(parseFloat(cur.latitude),parseFloat(cur.longitude));
     console.log(shelterLoc);
-    // console.log(cur.latitude);
-    // console.log('lng: ' + this.longitude);
     shelterView.createMarker(shelterLoc, cur.name, map, infowindow);
   });
 
