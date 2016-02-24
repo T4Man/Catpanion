@@ -21,20 +21,20 @@ function initMap(searchParam) {
       infowindow.setPosition(pos);
       infowindow.setContent('Location found.');
       map.setCenter(pos);
+      var request = {
+        location: pos,
+        radius: '10000',
+        query: searchParam
+      };
+      service = new google.maps.places.PlacesService(map);
+      service.textSearch(request, callback);
+      details = service.placeDetails;
     }, function() {
       handleLocationError(true, infoWindow, map.getCenter());
     });
   } else {
     handleLocationError(false, infoWindow, map.getCenter());
   }
-  var request = {
-    location: burien,
-    radius: '10000',
-    query: searchParam
-  };
-  service = new google.maps.places.PlacesService(map);
-  service.textSearch(request, callback);
-  details = service.placeDetails;
 }
 
 function callback(results, status) {
