@@ -5,25 +5,31 @@ var map,
 shelterView.zipHere = 0;
 
 shelterView.createMarker = function(loc, placeContent, map, infowindow) {
+  console.log('loc is ' + loc);
+  console.log('placeContent is ' + placeContent);
+  console.log('map is ' + map);
+  console.log('infowindow' + infowindow);
   var marker = new google.maps.Marker({
     map: map,
     position: loc,
-    visible: true
   });
+  marker.setVisible(true);
   google.maps.event.addListener(marker, 'click', function() {
     infowindow.setContent(placeContent);
     infowindow.open(map, this);
   });
 };
 
+function loadMarkers() {
+  Shelter.all.forEach(function(cur) {
+    var shelterLoc = new google.maps.LatLng(parseFloat(cur.latitude),parseFloat(cur.longitude));
+    shelterView.createMarker(shelterLoc, cur.name, map, infowindow);
+  });
+}
+
 
 function initShelterMap() {
-  var burien = {lat: 47.466575, lng: -122.341207};
-  var map = new google.maps.Map(document.getElementById('map'), {
-    center: burien,
-    zoom: 11
-  });
-  var infowindow = new google.maps.InfoWindow();
+  infowindow = new google.maps.InfoWindow();
 
   if (navigator.geolocation) {
     navigator.geolocation.getCurrentPosition(function(position) {
@@ -33,14 +39,16 @@ function initShelterMap() {
         lat: latHere,
         lng: lngHere
       };
-
-      // console.log(position.coords.latitude);
-      // console.log(position.coords.longitude);
+      map = new google.maps.Map(document.getElementById('map'), {
+        center: pos,
+        zoom: 11
+      })
       PostalCode.requestList(latHere, lngHere, function(zipData) {
         var zipHere = zipData.postalCodes[0].postalCode;
         Shelter.requestShelterList(zipHere, function(shelterData) {
           var shelterList = shelterData.petfinder.shelters.shelter;
           Shelter.loadAll(shelterList);
+          loadMarkers();
         });
       });
       infowindow.setPosition(pos);
@@ -51,17 +59,13 @@ function initShelterMap() {
     });
   } else {
     handleLocationError(false, infoWindow, map.getCenter());
+    var burien = {lat: 47.466575, lng: -122.341207};
+    map = new google.maps.Map(document.getElementById('map'), {
+      center: burien,
+      zoom: 11
+    });
+
   };
 
-  Shelter.all.forEach(function(cur) {
-    // var shelterLoc = {
-    //   lat: parseFloat(cur.latitude),
-    //   lng: parseFloat(cur.longitude)
-    // };
-    var shelterLoc = new google.maps.LatLng(parseFloat(cur.latitude),parseFloat(cur.longitude));
-    // console.log(cur.latitude);
-    // console.log('lng: ' + this.longitude);
-    shelterView.createMarker(shelterLoc, cur.name, map, infowindow);
-  });
-
+  loadMarkers();
 }
