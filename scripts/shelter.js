@@ -8,12 +8,12 @@ Shelter.all = [];
 
 Shelter.requestShelterList = function(location, callback) {
   var petFinderKey = 'fc112f63a02888e709b52b7778826df7';
-  var petFinderApi = 'http://api.petfinder.com/shelter.find?format=json&key='
-  + petFinderKey + '&location=' + location +'&callback=?';
+  var petFinderApi = 'http://api.petfinder.com/shelter.find?format=json&key='+
+  petFinderKey + '&location=' + location +'&callback=?';
   $.getJSON(petFinderApi)
   .done(function(petApiData) {callback(petApiData);})
   .error(function(err) {console.log('Error: ' + JSON.stringify(err));});
-}
+};
 
 Shelter.requestShelterList('98109', function(data) {
   var shelterList = data.petfinder.shelters.shelter;
@@ -23,5 +23,5 @@ Shelter.requestShelterList('98109', function(data) {
 Shelter.loadAll = function(list) {
   Shelter.all = list.map(function(ele) {
     return new Shelter(ele);
-  })
-}
+  });
+};

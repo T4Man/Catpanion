@@ -7,7 +7,6 @@ $('#question-box').append(temp);
 $('#wrapper').css({
   width: $('#question-box')[0].scrollWidth
 });
-//$('div.questionBox').hide();  TODO: refactor later
 
 $('div.questionBox').append(temp);
 $('div.questionBox').hide();  //TODO: refactor later

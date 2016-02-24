@@ -37,7 +37,7 @@ function initShelterMap() {
     });
   } else {
     handleLocationError(false, infoWindow, map.getCenter());
-  };
+  }
 
   Shelter.all.forEach(function(cur) {
     // var shelterLoc = {
@@ -45,7 +45,6 @@ function initShelterMap() {
     //   lng: parseFloat(cur.longitude)
     // };
     var shelterLoc = new google.maps.LatLng(parseFloat(cur.latitude),parseFloat(cur.longitude));
-    console.log(shelterLoc);
     // console.log(cur.latitude);
     // console.log('lng: ' + this.longitude);
     shelterView.createMarker(shelterLoc, cur.name, map, infowindow);
