@@ -62,14 +62,3 @@ function createMarker(place) {
     infowindow.open(map, this);
   });
 }
-
-function getDetails(){
-  $.ajax({
-    type: "GET",
-    url: "https://maps.googleapis.com/maps/api/place/details/json?placeid=ChIJN1t_tDeuEmsRUsoyG83frY4&key=AIzaSyCNGaZBoUTqLZleHdf3OvLhjl3-mTDgvhc",
-    success: function(data, message, xhr){
-      console.log(data);
-    }
-    //JSON.parse(localStorage.rawData);
-  })
-};

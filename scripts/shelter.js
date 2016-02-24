@@ -25,3 +25,14 @@ Shelter.loadAll = function(list) {
     return new Shelter(ele);
   })
 }
+
+function showShelters() {
+  Shelter.all.forEach(function(a){
+    $('#shelters').append(a.toHtml());
+  });
+}
+
+Shelter.prototype.toHtml = function() {
+  var template = Handlebars.compile($('#shelter-template').html());
+  return template(this);
+}

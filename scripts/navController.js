@@ -8,7 +8,7 @@ $('#donate-button').on('click', function(){
 $('#clinic-button').on('click', function(){
   $('#map').fadeIn(200);
   initMap('veterinarian');
-  getDetails();
+  clinicDetails();
 });
 
 $('#adopt-button').on('click', function(){
