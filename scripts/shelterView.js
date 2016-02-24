@@ -6,8 +6,8 @@ shelterView.createMarker = function(loc, placeContent, map, infowindow) {
   var marker = new google.maps.Marker({
     map: map,
     position: loc,
-    visible: true
   });
+  marker.setVisible(true);
   google.maps.event.addListener(marker, 'click', function() {
     infowindow.setContent(placeContent);
     infowindow.open(map, this);
