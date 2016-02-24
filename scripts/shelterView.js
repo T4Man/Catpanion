@@ -35,6 +35,7 @@ function initShelterMap() {
     zoom: 11
   })
   PostalCode.requestList(curLocation.latitude, curLocation.longitude, function(zipData) {
+    console.log(zipData);
     var zipHere = zipData.postalCodes[0].postalCode;
     Shelter.requestShelterList(zipHere, function(shelterData) {
       var shelterList = shelterData.petfinder.shelters.shelter;

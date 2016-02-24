@@ -45,3 +45,4 @@
 
   module.curLocation = curLocation;
 })(window);
+curLocation.getLocation();
