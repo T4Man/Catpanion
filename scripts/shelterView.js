@@ -2,6 +2,8 @@ var map,
     infowindow,
     shelterView = {};
 
+shelterView.zipHere = 0;
+
 shelterView.createMarker = function(loc, placeContent, map, infowindow) {
   var marker = new google.maps.Marker({
     map: map,
@@ -14,6 +16,7 @@ shelterView.createMarker = function(loc, placeContent, map, infowindow) {
   });
 };
 
+
 function initShelterMap() {
   var burien = {lat: 47.466575, lng: -122.341207};
   var map = new google.maps.Map(document.getElementById('map'), {
@@ -24,11 +27,22 @@ function initShelterMap() {
 
   if (navigator.geolocation) {
     navigator.geolocation.getCurrentPosition(function(position) {
+      var latHere = position.coords.latitude;
+      var lngHere = position.coords.longitude
       var pos = {
-        lat: position.coords.latitude,
-        lng: position.coords.longitude
+        lat: latHere,
+        lng: lngHere
       };
 
+      // console.log(position.coords.latitude);
+      // console.log(position.coords.longitude);
+      PostalCode.requestList(latHere, lngHere, function(zipData) {
+        var zipHere = zipData.postalCodes[0].postalCode;
+        Shelter.requestShelterList(zipHere, function(shelterData) {
+          var shelterList = shelterData.petfinder.shelters.shelter;
+          Shelter.loadAll(shelterList);
+        });
+      });
       infowindow.setPosition(pos);
       infowindow.setContent('Location found.');
       map.setCenter(pos);
@@ -45,7 +59,6 @@ function initShelterMap() {
     //   lng: parseFloat(cur.longitude)
     // };
     var shelterLoc = new google.maps.LatLng(parseFloat(cur.latitude),parseFloat(cur.longitude));
-    console.log(shelterLoc);
     // console.log(cur.latitude);
     // console.log('lng: ' + this.longitude);
     shelterView.createMarker(shelterLoc, cur.name, map, infowindow);
