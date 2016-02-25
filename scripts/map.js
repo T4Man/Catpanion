@@ -4,38 +4,48 @@ var service;
 var infowindow;
 
 function initMap(searchParam) {
-  var burien = {lat: 47.466575, lng: -122.341207};
-      map = new google.maps.Map(document.getElementById('map'), {
-    center: burien,
-    zoom: 11
-  });
+  // var burien = {lat: 47.466575, lng: -122.341207};
+  //     map = new google.maps.Map(document.getElementById('map'), {
+  //   center: burien,
+  //   zoom: 11
+  // });
     infowindow = new google.maps.InfoWindow();
+    if(!curLocation.latitude) {
+      curLocation.getLocation();
+    }
+    map = new google.maps.Map(document.getElementById('map'), {
+      center: curLocation.pos,
+      zoom: 11
+    })
 
-  if (navigator.geolocation) {
-    navigator.geolocation.getCurrentPosition(function(position) {
-      var pos = {
-        lat: position.coords.latitude,
-        lng: position.coords.longitude
-      };
-
-      infowindow.setPosition(pos);
-      infowindow.setContent('Location found.');
-      map.setCenter(pos);
-      var request = {
-        location: pos,
-        radius: '10000',
-        query: searchParam
-      };
-      service = new google.maps.places.PlacesService(map);
-      service.textSearch(request, callback);
-      details = service.placeDetails;
-    }, function() {
-      handleLocationError(true, infoWindow, map.getCenter());
-    });
-  } else {
-    handleLocationError(false, infoWindow, map.getCenter());
+    infowindow.setPosition(curLocation.pos);
+    infowindow.setContent('Location found.');
+    map.setCenter(curLocation.pos);
+    var request = {
+      location: curLocation.pos,
+      radius: '10000',
+      query: searchParam
+    };
+    service = new google.maps.places.PlacesService(map);
+    service.textSearch(request, callback);
+    details = service.placeDetails;
   }
-}
+
+
+  // if (navigator.geolocation) {
+  //   navigator.geolocation.getCurrentPosition(function(position) {
+  //     var pos = {
+  //       lat: position.coords.latitude,
+  //       lng: position.coords.longitude
+  //     };
+  //   }
+  // }
+
+  //   }, function() {
+  //     handleLocationError(true, infoWindow, map.getCenter());
+  //   });
+  // } else {
+  //   handleLocationError(false, infoWindow, map.getCenter());
 
 function callback(results, status) {
   if (status === google.maps.places.PlacesServiceStatus.OK) {
