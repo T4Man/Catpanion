@@ -26,24 +26,26 @@ function loadMarkers() {
 function initShelterMap() {
   infowindow = new google.maps.InfoWindow();
 
-  if (!curLocation.latitude) {
-    curLocation.getLocation();
-  }
   map = new google.maps.Map(document.getElementById('map'), {
-    center: curLocation.pos,
+    // center: curLocation.pos,
     zoom: 11
   })
-  PostalCode.requestList(curLocation.latitude, curLocation.longitude, function(zipData) {
-    var zipHere = zipData.postalCodes[0].postalCode;
-    Shelter.requestShelterList(zipHere, function(shelterData) {
-      var shelterList = shelterData.petfinder.shelters.shelter;
-      Shelter.loadAll(shelterList);
-      loadMarkers();
+  // if (!curLocation.latitude) {
+  // }
+  curLocation.getLocation(map, function() {
+    PostalCode.requestList(curLocation.latitude, curLocation.longitude, function(zipData) {
+      var zipHere = zipData.postalCodes[0].postalCode;
+      Shelter.requestShelterList(zipHere, function(shelterData) {
+        var shelterList = shelterData.petfinder.shelters.shelter;
+        Shelter.loadAll(shelterList);
+        loadMarkers();
+      });
     });
+    infowindow.setPosition(curLocation.pos);
+    infowindow.setContent('Location found.');
+    map.setCenter(curLocation.pos);
+    
   });
-  infowindow.setPosition(curLocation.pos);
-  infowindow.setContent('Location found.');
-  map.setCenter(curLocation.pos);
 };
 
 loadMarkers();
