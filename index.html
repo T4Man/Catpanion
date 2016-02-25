@@ -7,17 +7,12 @@
     <link rel="stylesheet" type="text/css" href="styles/base.css">
     <link rel="stylesheet" type="text/css" href="styles/layout.css">
     <link rel="stylesheet" type="text/css" href="styles/modules.css">
-    <script id="question-template" type="text/x-handlebars-template">
-      {{#each this}}
-      <p id="{{id}}">{{text}}</p>
-      <form id="selectorForm">
-        <input type="radio" name="question" value="5">{{answer1}}<br>
-        <input type="radio" name="question" value="4">{{answer2}}<br>
-        <input type="radio" name="question" value="3">{{answer3}}<br>
-        <input type="radio" name="question" value="2">{{answer4}}<br><br>
-      </form>
-      {{/each}}
-      <button id="submitButton" type="submit" value="Submit">Submit</button>
+    <script id="shelter-template" type="text/x-handlebars-template">
+      <h3>{{name}}</h3>
+      <p>{{address1}}</p>
+      <p>{{city}}, {{state}} {{zip}}</p>
+      <p>{{phone}}</p>
+      <p>{{email}}</p>
     </script>
     <script id="breed-template" type="text/x-handlebars-template">
       <article class="allBreeds" id="{{breed}}" data-aff="{{affectionate}}" data-groom="{{grooming}}" data-shed="{{shedding}}" data-play="{{playfulness}}"
@@ -48,31 +43,36 @@
     <header class="site-header">
       <div class="title">
         <h1>Cat-Panion.Com</h1>
+        <a href='/'><img id="paw" src="images/cat-paw.png" /></a>
       </div>
-      <nav class="main-nav">
-        <img id="burger" src="images/images/hamburger.png">
-        <ul>
-          <li><a id="adopt-button" href="#">Pet Adoption</a></li>
-          <li><a id="donate-button" href="#">Pet Donation</a></li>
-          <li><a id="clinic-button" href="#">Pet Clinics</a></li>
-          <li><a id="sitter-button" href="#">Pet Nanny</a></li>
-        </ul>
-      </nav>
+      <div id="nav-div">
+        <nav class="main-nav">
+          <img id="burger" src="images/images/hamburger.png">
+          <ul>
+            <li><a id="adopt-button" href="#">Pet Adoption</a></li>
+            <li><a id="donate-button" href="#">Pet Donation</a></li>
+            <li><a id="clinic-button" href="#">Pet Clinics&nbsp&nbsp&nbsp&nbsp</a></li>
+            <li><a id="sitter-button" href="#">Pet Nanny&nbsp&nbsp&nbsp&nbsp</a></li>
+          </ul>
+        </nav>
+      </div>
     </header>
-      <div id="map"></div>
     <main id="main-section">
       <div class="cat-div"><img id="cat-cover" src="images/catfront2.png" />
       <section class="subheading">
+        <div id="intro-wrapper">
         <h3 class="intro">We can help find the best cat-panion for you.</h3>
         <p class="intro-p">Choose the cat-panion selector, select by chracteristics or see all the breeds.</p>
-        <div id="wrapper"><div id="question-box"></div></div>
+      </div>
+        <div id="map-wrapper"><div id="map"></div></div>
       </section>
       </div>
     </main>
 
       <section>
         <ul id="sidebar">
-          <li><button id="selectorButton">Cat-Panion Selector</button></li>
+          <li><button id="breed-list-button">Pet Finder Breed List</button></li>
+          <li><button id="shelter-list-button">Pet Finder Shelter List</button></li>
           <li><button id="breedButton">See The Cats!</button></li>
             <ul id="charList">
               <li>
@@ -93,13 +93,10 @@
         </ul>
       </section>
       <section>
-        <!--<div class="resultsPane"></div> Add this after refactor-->
-        <!--div class="questionBox">
-        </div-->
-        <div class="breed-articles">
-        </div>
-        <div class="selector-cats">
-        </div>
+        <div id="breeds"><ul></ul></div>
+        <div id="shelters"></div>
+        <div class="breed-articles"></div>
+        <div class="selector-cats"></div>
       </section>
     <footer>Footer</footer>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/2.0.0/handlebars.js"></script>
@@ -109,15 +106,16 @@
     <script src="scripts/navController.js"></script>
     <script src="scripts/map.js"></script>
     <script src="scripts/catabase.json"></script>
-    <script src="scripts/catabase.js"></script>
     <script src="vendor/scripts/html5sql.js"></script>
     <script src="vendor/scripts/page.js"></script>
-    <script src="scripts/questions.js"></script>
     <script src="scripts/allBreeds.js"></script>
     <script src="scripts/catArticleController.js"></script>
-    <script src="scripts/selector.js"></script>
     <script src="scripts/shelter.js"></script>
     <script src="scripts/shelterView.js"></script>
-
+    <script src="scripts/petfinderController.js"></script>
+    <script src="scripts/breed.js"></script>
+    <script src="scripts/breedView.js"></script>
+    <script src="scripts/startPage.js"></script>
+    <!-- <script src="scripts/routes.js"></script> -->
   </body>
 </html>
