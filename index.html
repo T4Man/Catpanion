@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Cat-Panion.com</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="vendor/styles/normalize.css">
+    <link rel="stylesheet" type="text/css" href="styles/base.css">
+    <link rel="stylesheet" type="text/css" href="styles/layout.css">
+    <link rel="stylesheet" type="text/css" href="styles/modules.css">
+    <script id="shelter-template" type="text/x-handlebars-template">
+      <h3>{{name}}</h3>
+      <p>{{address1}}</p>
+      <p>{{city}}, {{state}} {{zip}}</p>
+      <p>{{phone}}</p>
+      <p>{{email}}</p>
+    </script>
+    <script id="breed-template" type="text/x-handlebars-template">
+      <article class="allBreeds" id="{{breed}}" data-aff="{{affectionate}}" data-groom="{{grooming}}" data-shed="{{shedding}}" data-play="{{playfulness}}"
+      data-intel="{{intelligence}}" data-vocal="{{vocality}}" data-kids="{{toleranceWithKids}}" data-anim="{{toleranceWithOtherAnimals}}" data-health="{{generalHealth}}">
+        <header>
+          <img src="{{{image}}}">
+          <h1>{{breed}}</h1>
+        </header>
+        <section class="ratings">
+          <ul>Characteristic Ratings
+            <li>Affectionate: {{affectionate}}</li>
+            <li>Grooming: {{grooming}}</li>
+            <li>Shedding: {{shedding}}</li>
+            <li>Playfulness: {{playfulness}}</li>
+            <li>Intelligence: {{intelligence}}</li>
+            <li>Vocality: {{vocality}}</li>
+            <li>Tolerance With Kids: {{toleranceWithKids}}</li>
+            <li>Tolerance With Other Animals: {{toleranceWithOtherAnimals}}</li>
+            <li>Prone to Illness: {{generalHealth}}</li>
+          </ul>
+        </section>
+        <section class="personArticle">{{{personality}}}</section>
+        <section class="traitArticle">{{{traits}}}</section>
+      </article>
+    </script>
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="title">
+        <h1>Cat-Panion.Com</h1>
+        <a href='/'><img id="paw" src="images/cat-paw.png" /></a>
+      </div>
+      <div id="nav-div">
+        <nav class="main-nav">
+          <img id="burger" src="images/images/hamburger.png">
+          <ul>
+            <li><a id="adopt-button" href="#">Pet Adoption</a></li>
+            <li><a id="donate-button" href="#">Pet Donation</a></li>
+            <li><a id="clinic-button" href="#">Pet Clinics&nbsp&nbsp&nbsp&nbsp</a></li>
+            <li><a id="sitter-button" href="#">Pet Nanny&nbsp&nbsp&nbsp&nbsp</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <main id="main-section">
+      <div class="cat-div"><img id="cat-cover" src="images/catfront2.png" />
+      <section class="subheading">
+        <div id="intro-wrapper">
+        <h3 class="intro">We can help find the best cat-panion for you.</h3>
+        <p class="intro-p">Choose the cat-panion selector, select by chracteristics or see all the breeds.</p>
+      </div>
+        <div id="map-wrapper"><div id="map"></div></div>
+      </section>
+      </div>
+    </main>
+
+      <section>
+        <ul id="sidebar">
+          <li><button id="breed-list-button">Pet Finder Breed List</button></li>
+          <li><button id="shelter-list-button">Pet Finder Shelter List</button></li>
+          <li><button id="breedButton">See The Cats!</button></li>
+            <ul id="charList">
+              <li>
+                <select id="char-filter">
+                  <option>-- Filter by Characteristic --</option>
+                  <option value="affectionate" selected="selected">Most Affectionate</option>
+                  <option value="grooming" selected="selected">Less Grooming</option>
+                  <option value="shedding" selected="selected">Less Shedding</option>
+                  <option value="playfulness" selected="selected">Most Playful</option>
+                  <option value="intelligence" selected="selected">Most Intelligent</option>
+                  <option value="vocality" selected="selected">Most Vocal</option>
+                  <option value="toleranceWithKids" selected="selected">Most Tolerant of Children</option>
+                  <option value="toleranceWithOtherAnimals" selected="selected">Most Tolerant of Other Animals</option>
+                  <option value="generalHealth" selected="selected">Less Prone to Illness</option>
+                </select>
+              </li>
+            </ul>
+        </ul>
+      </section>
+      <section>
+        <div id="breeds"><ul></ul></div>
+        <div id="shelters"></div>
+        <div class="breed-articles"></div>
+        <div class="selector-cats"></div>
+      </section>
+    <footer>Footer</footer>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/2.0.0/handlebars.js"></script>
+    <script src="http://code.jquery.com/jquery-1.11.2.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCNGaZBoUTqLZleHdf3OvLhjl3-mTDgvhc&signed_in=true&libraries=places" async defer></script>
+    <script src="scripts/navController.js"></script>
+    <script src="scripts/map.js"></script>
+    <script src="scripts/catabase.json"></script>
+    <script src="vendor/scripts/html5sql.js"></script>
+    <script src="vendor/scripts/page.js"></script>
+    <script src="scripts/allBreeds.js"></script>
+    <script src="scripts/catArticleController.js"></script>
+    <script src="scripts/shelter.js"></script>
+    <script src="scripts/shelterView.js"></script>
+    <script src="scripts/petfinderController.js"></script>
+    <script src="scripts/breed.js"></script>
+    <script src="scripts/breedView.js"></script>
+    <script src="scripts/startPage.js"></script>
+    <!-- <script src="scripts/routes.js"></script> -->
+  </body>
+</html>
