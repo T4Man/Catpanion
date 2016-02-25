@@ -6,10 +6,17 @@ var renderBreed = function(breed) {
 
 breedView.index = function(breedArray) {
   Breed.all.forEach(function(breed) {
-    console.log(breed);
-    console.log(renderBreed(breed));
     $('#breeds').append(renderBreed(breed));
   });
 }
 
 breedView.index();
+
+$(function(){
+  $('#breed-list-button').click(function(){
+  console.log('click');
+  $('.breed-articles').hide();
+  $('#shelters').hide();
+  $('#breeds').fadeToggle();
+  });
+});

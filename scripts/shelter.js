@@ -26,13 +26,21 @@ Shelter.loadAll = function(list) {
   })
 }
 
-function showShelters() {
+function showShelters(){
   Shelter.all.forEach(function(a){
     $('#shelters').append(a.toHtml());
   });
-}
+} showShelters();
 
-Shelter.prototype.toHtml = function() {
+Shelter.prototype.toHtml = function(){
   var template = Handlebars.compile($('#shelter-template').html());
   return template(this);
-}
+};
+
+$(function(){
+  $('#shelter-list-button').click(function(){
+  console.log('click');
+  $('.breed-articles').hide();
+  $('#shelters').show();
+  });
+});
