@@ -1,22 +1,25 @@
-$('#map').hide();
+  $('#map').hide();
 
-$('#donate-button').on('click', function(){
-  $('#map').fadeIn(200);
-  initMap('animal rescue');
-});
+  $('#donate-button').on('click', function(){
+    $('#intro-wrapper').hide();
+    $('#map').fadeIn(200);
+    initMap('animal rescue');
+  });
 
-$('#clinic-button').on('click', function(){
-  $('#map').fadeIn(200);
-  initMap('veterinarian');
-  getDetails();
-});
+  $('#clinic-button').on('click', function(){
+    $('#intro-wrapper').hide();
+    $('#map').fadeIn(200);
+    initMap('veterinarian');
+  });
 
-$('#adopt-button').on('click', function(){
-  $('#map').fadeIn(200);
-  initShelterMap();
-});
+  $('#adopt-button').on('click', function(){
+    $('#intro-wrapper').hide();
+    $('#map').fadeIn(200);
+    initShelterMap();
+  });
 
-$('#sitter-button').on('click', function(){
-  $('#map').fadeIn(200);
-  initMap('pet sitter');
-});
+  $('#sitter-button').on('click', function(){
+    $('#intro-wrapper').hide();
+    $('#map').fadeIn(200);
+    initMap('pet sitter');
+  });
