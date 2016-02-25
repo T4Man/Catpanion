@@ -24,6 +24,8 @@ Breed.requestBreeds(function(data){
   var breedList = data.petfinder.breeds.breed;
   Breed.loadAll(breedList);
 
+// DOM stuff is here because of latency issues
+
   Breed.all.forEach(function(breed) {
     $('#breeds').append($('<li>').text(breed));
   });
