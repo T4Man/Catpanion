@@ -1,0 +1,19 @@
+{
+  "name": "Catpanion",
+  "version": "1.0.0",
+  "description": "Catpanion Code 301 Project",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/T4Man/Catpanion/issues"
+  },
+  "homepage": "https://github.com/T4Man/Catpanion",
+  "dependencies": {
+    "express": "^4.13.4",
+    "express-request-proxy": "^1.1.0"
+  }
+}
