@@ -16,14 +16,20 @@ shelterView.createMarker = function(loc, placeContent, map, infowindow) {
 
 function loadMarkers() {
   Shelter.all.forEach(function(cur) {
-    var shelterLoc = new google.maps.LatLng(parseFloat(cur.latitude),parseFloat(cur.longitude));
+    console.log('lat is ' + cur.latitude);
+    console.log('lng is ' + cur.longitude);
+    // var shelterLoc = new google.maps.LatLng(parseFloat(cur.latitude),parseFloat(cur.longitude));
+    var shelterLoc = {
+      lat: parseFloat(cur.latitude),
+      lng: parseFloat(cur.longitude)
+    };
     shelterView.createMarker(shelterLoc, cur.name, map, infowindow);
   });
 }
 
 function initShelterMap() {
   var burien = {lat: 47.466575, lng: -122.341207};
-  var map = new google.maps.Map(document.getElementById('map'), {
+  map = new google.maps.Map(document.getElementById('map'), {
     center: burien,
     zoom: 10
   });
