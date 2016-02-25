@@ -16,9 +16,6 @@ shelterView.createMarker = function(loc, placeContent, map, infowindow) {
 
 function loadMarkers() {
   Shelter.all.forEach(function(cur) {
-    console.log('lat is ' + cur.latitude);
-    console.log('lng is ' + cur.longitude);
-    // var shelterLoc = new google.maps.LatLng(parseFloat(cur.latitude),parseFloat(cur.longitude));
     var shelterLoc = {
       lat: parseFloat(cur.latitude),
       lng: parseFloat(cur.longitude)
@@ -31,9 +28,9 @@ function initShelterMap() {
   var burien = {lat: 47.466575, lng: -122.341207};
   map = new google.maps.Map(document.getElementById('map'), {
     center: burien,
-    zoom: 10
+    zoom: 11
   });
-  var infowindow = new google.maps.InfoWindow();
+  infowindow = new google.maps.InfoWindow();
 
   if (navigator.geolocation) {
     navigator.geolocation.getCurrentPosition(function(position) {
@@ -63,16 +60,5 @@ function initShelterMap() {
   }
 
 loadMarkers();
-
-  // Shelter.all.forEach(function(cur) {
-  //   // var shelterLoc = {
-  //   //   lat: parseFloat(cur.latitude),
-  //   //   lng: parseFloat(cur.longitude)
-  //   // };
-  //   var shelterLoc = new google.maps.LatLng(parseFloat(cur.latitude),parseFloat(cur.longitude));
-  //   // console.log(cur.latitude);
-  //   // console.log('lng: ' + this.longitude);
-  //   shelterView.createMarker(shelterLoc, cur.name, map, infowindow);
-  // });
 
 }
