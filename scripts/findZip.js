@@ -9,11 +9,18 @@ PostalCode.all = [];
 PostalCode.requestList = function(lat, lng, callback) {
   var geonamesApiCall = 'http://api.geonames.org/findNearbyPostalCodesJSON?' +
       'lat=' + lat + '&lng=' + lng + '&username=catpanion';
-  $.getJSON(geonamesApiCall)
-    .done(function(postalData) {
-      if(callback) {
-        callback(postalData);
-      }
-    })
-    .error(function(err) {console.log('Error: ' + JSON.stringify(err));})
-}
+
+      $.ajax({
+        url: geonamesApiCall,
+        dataType: 'json',
+        async: false,
+        success: function(postalData) {
+          if(callback) {
+            callback(postalData);
+          }
+        },
+        error: function(err) {
+          console.log('error' + JSON.stringify(err));
+        }
+      });
+    }

@@ -38,7 +38,7 @@ function initShelterMap() {
         lng: pLng
       };
       PostalCode.requestList(pLat, pLng, function(zipData) {
-        var zipHere = zipData.postalcodes[0].postalcode;
+        var zipHere = zipData.postalCodes[0].postalCode;
         Shelter.requestShelterList(zipHere, function(shelterData) {
           var shelterList = shelterData.petfinder.shelters.shelter;
           Shelter.loadAll(shelterList);
