@@ -8,7 +8,7 @@ Shelter.all = [];
 
 Shelter.requestShelterList = function(location, callback) {
   var petFinderKey = 'fc112f63a02888e709b52b7778826df7';
-  var petFinderApi = 'http://api.petfinder.com/shelter.find?format=json&key='+
+  var petFinderApi = 'https://api.petfinder.com/shelter.find?format=json&key='+
   petFinderKey + '&location=' + location +'&callback=?';
   $.getJSON(petFinderApi)
   .done(function(petApiData) {callback(petApiData);})

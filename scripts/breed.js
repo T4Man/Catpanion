@@ -9,17 +9,17 @@ Breed.all = [];
 
 Breed.requestBreeds = function(callback) {
   var petFinderKey = 'fc112f63a02888e709b52b7778826df7';
-  var petFinderApi = 'http://api.petfinder.com/breed.list?format=json&key=' + petFinderKey + '&animal=cat&location=98026&callback=?'
+  var petFinderApi = 'http://api.petfinder.com/breed.list?format=json&key=' + petFinderKey + '&animal=cat&location=98026&callback=?';
   $.getJSON(petFinderApi)
     .done(function(petApiData) {callback(petApiData);})
     .error(function(err) {console.log('Error: ' + JSON.stringify(err));});
-}
+};
 
 Breed.loadAll = function(list) {
   Breed.all = list.map(function(ele) {
-    return ele.$t
-  })
-}
+    return ele.$t;
+  });
+};
 
 Breed.requestBreeds(function(data){
   var breedList = data.petfinder.breeds.breed;
