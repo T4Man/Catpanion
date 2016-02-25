@@ -57,9 +57,14 @@ article {
     width: 100%;
     padding: 0;
   }
-  .main-nav li {
-    padding: 1em 2em 1em 0;
-    font-size: 1.5em;
+  .main-nav ul {
+    display: none;
+    list-style: none;
+    padding: 0;
+    top: 50px;
+  }
+  .main-nav a {
+    padding-top: 5px;
   }
   .subheading {
     height: 100%;

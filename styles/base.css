@@ -1,14 +1,6 @@
 
 body {
-  padding: 1%;
-  background: linear-gradient(
-    to bottom,
-    rgba(0, 0, 0, 0),
-    rgba(0, 0, 0, 0.2),
-    rgba(0, 0, 0, 0.4),
-    rgba(0, 0, 0, 0.4),
-    rgba(0, 0, 0, 0)
-    );
+  padding: 0;
 }
 h1, h3 {
   font-size: 1.5em;
@@ -24,6 +16,19 @@ button {
   padding: 0 5px;
   border-radius: 10px;
   border-color: solid 2px #99958B;
+}
+footer {
+  font-size: .8em;
+}
+.site-header, #main-section, #section-sidebar, footer {
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0),
+    rgba(0, 0, 0, 0.2),
+    rgba(0, 0, 0, 0.4),
+    rgba(0, 0, 0, 0.4),
+    rgba(0, 0, 0, 0)
+    );
 }
 @font-face {
   font-family: "Rosarivo";
