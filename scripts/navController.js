@@ -1,4 +1,35 @@
-$('#map').hide();
+/*(function(module) {
+  var navControllers = {};
+
+  adoptPage.index = function(){
+    $('#intro-wrapper').hide();
+    $('#map').show();
+    initShelterMap();
+  };
+
+  donatePage.index = function(){
+    $('#intro-wrapper').hide();
+    $('#map').show();
+    initMap('animal rescue');
+  };
+
+  clinicPage.index = function(){
+    $('#intro-wrapper').hide();
+    $('#map').show();
+    initMap('veterinarian');
+  };
+
+  nannyPage.index = function(){
+    ('#intro-wrapper').hide();
+    $('#map').show();
+    initMap('pet sitter');
+  };
+
+  module.navControllers = navControllers;
+})(window);
+
+
+//$('#map').hide();
 
 $('#donate-button').on('click', function(){
   $('#intro-wrapper').hide();
@@ -25,4 +56,5 @@ $('#sitter-button').on('click', function(){
 });
 
 //Attempted refactor but had roadblocks and ran out of time. Focused on client
-//side routing instead. 
+//side routing instead.
+*/

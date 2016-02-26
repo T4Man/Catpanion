@@ -10,7 +10,7 @@
 }
 #map {
   height: 400px;
-  width: 300px;
+  width: 200px;
 }
 #sidebar button {
   font-size: 1em;
@@ -35,7 +35,7 @@
   position: relative;
   width: 100%;
   height: auto;
-  padding: 0 0 20% 0;
+  padding-bottom: 15%;
 }
 .scrollup {
   position: fixed;

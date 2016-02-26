@@ -42,8 +42,8 @@ function showShelters(){
           Shelter.all.forEach(function(a){
             $('#shelters').append(a.toHtml());
           });
-        })
-      })
+        });
+      });
     }, function() {
       handleLocationError(true, infoWindow, map.getCenter());
     });

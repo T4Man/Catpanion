@@ -23,4 +23,4 @@ PostalCode.requestList = function(lat, lng, callback) {
           console.log('error' + JSON.stringify(err));
         }
       });
-    }
+    };

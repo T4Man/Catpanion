@@ -1,6 +1,7 @@
-
 body {
   padding: 0;
+  min-width: 320px;
+  max-width: 1040px;
 }
 h1, h3 {
   font-size: 1.5em;
@@ -20,6 +21,18 @@ button {
 footer {
   font-size: .8em;
 }
+#breeds li {
+  padding-left: 2%;
+  font-size: 0.8em;
+}
+#shelters h3 {
+  font-size: 1em;
+  padding-left: 2%;
+}
+#shelters p {
+  font-size: 0.8em;
+  padding: 0 0 0 2%;
+}
 .site-header, #main-section, #section-sidebar, footer {
   background: linear-gradient(
     to bottom,
@@ -31,14 +44,14 @@ footer {
     );
 }
 @font-face {
-  font-family: "Rosarivo";
-  src: : url ("styles/fonts/rosarivo/Rosarivo-Regular.ttf").format("truetype");
+  font-family: "Rosarivo", Garamond, Baskerville, serif;
+  src: : url ("vendor/styles/fonts/rosarivo/Rosarivo-Regular.ttf").format("truetype");
   font-weight: normal;
   font-style: normal;
 }
 @font-face {
-  font-family: "Lato";
-  src: : url ("styles/fonts/lato/Lato-Regular.ttf").format("truetype");
+  font-family: "Lato", 'Helvetica Neue', 'Helvetica', sans-serif;
+  src: : url ("vendor/styles/fonts/lato/Lato-Regular.ttf").format("truetype");
   font-weight: normal;
   font-style: normal;
 }

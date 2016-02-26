@@ -15,10 +15,9 @@ article {
   left: 0;
 }
 #map-wrapper #map {
-  opacity: .7;
   width: 110%;
   height: 200px;
-  top: 0;
+  bottom: 0;
 }
 .main-nav ul {
   display: none;
@@ -30,16 +29,16 @@ article {
   display:block;
 }
 .main-nav li {
-  padding: 0 5% 5% 1%;
+  padding: 0 5% 2% 1%;
   font-size: 1.5em;
 }
 .main-nav a {
   text-decoration: none;
   padding-right: 50%;
   color: black;
-  background-color: #EOE0E0;
+  background-color: #E0E0E0;
   border-radius: 5px;
-  border-color: solid 2px #000066;
+  border: solid 2px #000066;
 }
 .subheading {
   padding-left: 2%;
@@ -55,7 +54,7 @@ article {
     font-size: 2em;
     }
   #burger {
-      padding: 0 3% 25% 35%;
+      padding: 0 3% 10% 35%;
     }
   .site-header {
     position: relative;
@@ -87,16 +86,16 @@ article {
     height: 0 auto;
     top: 0;
     left: 0;
+  }
   #map-wrapper #map {
-    bottom: 5px;
-    opacity: .7;
+    opacity: .8;
     width: 110%;
-    height: 250px;
-    bottom: 5%;
+    height: 230px;
+    bottom: 15%;
   }
 }
 
-@media only screen and (min-width: 641px) {
+@media only screen and (min-width: 650px) {
   h1 {
     font-size: 2.5em;
   }
@@ -107,11 +106,9 @@ article {
     display: none;
   }
   #map-wrapper #map {
-    bottom: 5px;
-    opacity: .7;
     width: 110%;
-    height: 350px;
-    bottom: 25%;
+    height: 300px;
+    bottom: 0;
   }
   .main-nav ul {
     display: block;
@@ -131,11 +128,7 @@ article {
     display: inline-block;
     padding: 0 5px;
     border-radius: 5px;
-    border-color: solid 2px #000066;
-  }
-  .subheading {
-    font-size: 1.25em;
-    bottom: 20%;
+    border: solid 2px #000066;
   }
   .subheading {
     font-size: 1.25em;

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
   <head>
     <meta charset="UTF-8" />
-    <title>Cat-Panion.com</title>
+    <title>Catpanion.com</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" href="vendor/styles/normalize.css">
     <link rel="stylesheet" type="text/css" href="styles/base.css">
@@ -42,37 +42,37 @@
   <body>
     <header class="site-header">
       <div class="title">
-        <h1>Cat-Panion.Com</h1>
+        <h1>Catpanion.Com</h1>
         <a href='/'><img id="paw" src="images/cat-paw.png" /></a>
       </div>
       <div id="nav-div">
         <nav class="main-nav">
           <img id="burger" src="images/images/hamburger.png">
           <ul>
-            <li><a id="adopt-button" href="#">Pet Adoption</a></li>
-            <li><a id="donate-button" href="#">Pet Donation</a></li>
-            <li><a id="clinic-button" href="#">Pet Clinics&nbsp&nbsp&nbsp&nbsp</a></li>
-            <li><a id="sitter-button" href="#">Pet Nanny&nbsp&nbsp&nbsp&nbsp</a></li>
+            <li><a id="adopt-button" href="/adoptPage">Pet Adoption</a></li>
+            <li><a id="donate-button" href="/donatePage">Pet Donation</a></li>
+            <li><a id="clinic-button" href="/clinicPage">Pet Clinics&nbsp&nbsp&nbsp&nbsp</a></li>
+            <li><a id="sitter-button" href="/nannyPage">Pet Nanny&nbsp&nbsp&nbsp&nbsp</a></li>
           </ul>
         </nav>
       </div>
     </header>
     <main id="main-section">
       <div class="cat-div"><img id="cat-cover" src="images/catfront2.png" />
-      <section class="subheading">
-        <div id="intro-wrapper">
-        <h3 class="intro">We can help find the best cat-panion for you.</h3>
-        <p class="intro-p">Choose the cat-panion selector, select by chracteristics or see all the breeds.</p>
-      </div>
-        <div id="map-wrapper"><div id="map"></div></div>
-      </section>
+        <section class="subheading">
+          <div id="intro-wrapper">
+            <h3 class="intro">We can help find the best catpanion for you.</h3>
+            <p class="intro-p">Choose by characteristics or see all the breeds. Help support animal rescue and adoption groups.</p>
+          </div>
+          <div id="map-wrapper"><div id="map"></div></div>
+        </section>
       </div>
     </main>
       <section id="section-sidebar">
         <ul id="sidebar">
-          <li><button id="breed-list-button">Pet Finder Breed List</button></li>
-          <li><button id="shelter-list-button">Pet Finder Shelter List</button></li>
-          <li><button id="breedButton">See The Cats!</button></li>
+          <li><a href="/breedList"><button id="breed-list-button">Pet Finder Breed List</button></a></li>
+          <li><a href="/shelterList"><button id="shelter-list-button">Pet Finder Shelter List</button></a></li>
+          <li><a href="/seeTheCats"><button id="breedButton">See The Cats!</button></a></li>
             <ul id="charList">
               <li>
                 <select id="char-filter">
@@ -107,12 +107,18 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/2.0.0/handlebars.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCNGaZBoUTqLZleHdf3OvLhjl3-mTDgvhc&signed_in=true&libraries=places" async defer></script>
-    <script src="scripts/navController.js"></script>
+    <script src="scripts/adoptController.js"></script>
+    <script src="scripts/donateController.js"></script>
+    <script src="scripts/clinicController.js"></script>
+    <script src="scripts/nannyController.js"></script>
     <script src="scripts/map.js"></script>
     <script src="scripts/catabase.json"></script>
     <script src="vendor/scripts/page.js"></script>
     <script src="scripts/allBreeds.js"></script>
     <script src="scripts/catArticleController.js"></script>
+    <script src="scripts/breedListController.js"></script>
+    <script src="scripts/shelterListController.js"></script>
+    <script src="scripts/seeTheCatsController.js"></script>
     <script src="scripts/shelter.js"></script>
     <script src="scripts/shelterView.js"></script>
     <script src="scripts/breed.js"></script>

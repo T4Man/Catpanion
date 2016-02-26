@@ -46,8 +46,8 @@ function initShelterMap() {
           var shelterList = shelterData.petfinder.shelters.shelter;
           Shelter.loadAll(shelterList);
           loadMarkers();
-        })
-      })
+        });
+      });
 
       infowindow.setPosition(pos);
       infowindow.setContent('Location found.');

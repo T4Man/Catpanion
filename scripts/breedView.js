@@ -4,7 +4,7 @@ $(function(){
 
   var renderBreed = function(breed) {
     return $('<li>').text(breed);
-  }
+  };
 
   breedView.index = function(breedArray) {
     // :::: REFACTORED INTO BREED.JS - TOO MANY CALLS?? :::::
@@ -14,7 +14,7 @@ $(function(){
     //     $('#breeds').append(renderBreed(breed));
     //   });
     // }, 500);
-  }
+  };
 
   breedView.index();
 
