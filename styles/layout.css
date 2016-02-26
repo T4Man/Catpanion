@@ -1,4 +1,25 @@
-
+header > img {
+  width: 70%;
+  height: 0 auto;
+}
+article {
+  font-size: .8em;
+  padding-left: 5%;
+  padding-right: 10%;
+}
+#paw {
+  position: absolute;
+  width: 50px;
+  height: 0 auto;
+  top: 0;
+  left: 0;
+}
+#map-wrapper #map {
+  opacity: .7;
+  width: 110%;
+  height: 200px;
+  top: 0;
+}
 .main-nav ul {
   display: none;
   list-style: none;
@@ -16,9 +37,9 @@
   text-decoration: none;
   padding-right: 50%;
   color: black;
-  background-color: #E3DBAB;
-  border-radius: 10px;
-  border-color: solid 2px #999893;
+  background-color: #EOE0E0;
+  border-radius: 5px;
+  border-color: solid 2px #000066;
 }
 .subheading {
   padding-left: 2%;
@@ -28,29 +49,13 @@
   width: 70%;
   height: auto;
 }
-header > img {
-  width: 70%;
-  height: 0 auto;
-}
-article {
-  font-size: .8em;
-}
-#paw {
-  position: absolute;
-  width: 50px;
-  height: 0 auto;
-  top: 0;
-  left: 0;
-}
-#map-wrapper #map {
-  opacity: .7;
-  width: 110%;
-  height: 200px;
-}
 
 @media only screen and (min-width: 440px) {
   h1 {
     font-size: 2em;
+    }
+  #burger {
+      padding: 0 3% 25% 35%;
     }
   .site-header {
     position: relative;
@@ -71,13 +76,9 @@ article {
     font-size: 1.2em;
     bottom: 5%;
   }
-  #burger {
-    padding: 0 3% 25% 35%;
-  }
 }
 
 @media only screen and (min-width: 529px) {
-
   header > img {
     max-width: 350px;
   }
@@ -99,8 +100,18 @@ article {
   h1 {
     font-size: 2.5em;
   }
+  article {
+    font-size: 1em;
+  }
   #burger {
     display: none;
+  }
+  #map-wrapper #map {
+    bottom: 5px;
+    opacity: .7;
+    width: 110%;
+    height: 350px;
+    bottom: 25%;
   }
   .main-nav ul {
     display: block;
@@ -116,22 +127,15 @@ article {
   }
   .main-nav a {
     color: black;
-    background-color: #E3DBAB;
+    background-color: #E0E0E0;
     display: inline-block;
     padding: 0 5px;
-    border-radius: 10px;
-    border-color: solid 2px #292930;
+    border-radius: 5px;
+    border-color: solid 2px #000066;
   }
   .subheading {
     font-size: 1.25em;
     bottom: 20%;
-  }
-  #map-wrapper #map {
-    bottom: 5px;
-    opacity: .7;
-    width: 110%;
-    height: 350px;
-    bottom: 25%;
   }
   .subheading {
     font-size: 1.25em;
@@ -140,17 +144,16 @@ article {
 }
 
 @media only screen and (min-width: 743px) {
-
   #question-box {
     width: 80%;
     height: 250%;
   }
-  .title {
-    padding-bottom: 0;
-  }
   .subheading {
     font-size: 1.25em;
     bottom: 5%;
+  }
+  .title {
+    padding-bottom: 10px;
   }
   .site-header{
     height: 30px;

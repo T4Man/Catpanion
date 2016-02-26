@@ -9,8 +9,8 @@
   height: 0 auto;
 }
 #map {
-  height: 600px;
-  width: 400px;
+  height: 400px;
+  width: 300px;
 }
 #sidebar button {
   font-size: 1em;
@@ -18,7 +18,6 @@
   margin: 2px;
 }
 #sidebar {
-  border: solid black 1px;
   list-style: none;
 }
 .cat-div {
@@ -37,4 +36,10 @@
   width: 100%;
   height: auto;
   padding: 0 0 20% 0;
+}
+.scrollup {
+  position: fixed;
+  right: 20px;
+  bottom: 10px;
+  padding-top: 0;
 }

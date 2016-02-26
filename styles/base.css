@@ -10,12 +10,12 @@ p {
   font-family: "Lato", sans-serif;
 }
 button {
-  background-color: #E3DBAB;
+  background-color: #E0E0E0;
   font-weight: bold;
   display: inline-block;
   padding: 0 5px;
   border-radius: 10px;
-  border-color: solid 2px #99958B;
+  border-color: solid 2px #000066;
 }
 footer {
   font-size: .8em;
