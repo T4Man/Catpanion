@@ -1,8 +1,7 @@
 var map,
     infowindow,
     shelterView = {};
-    $('#shelters').hide();
-    
+
 shelterView.createMarker = function(loc, placeContent, map, infowindow) {
   var marker = new google.maps.Marker({
     map: map,
