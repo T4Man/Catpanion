@@ -4,7 +4,7 @@
   nannyController.index = function(){
     $('#intro-wrapper').hide();
     $('#map').show();
-    initShelterMap();
+    initMap('pet sitter');
   };
 
   module.nannyController = nannyController;

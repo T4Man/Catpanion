@@ -4,7 +4,7 @@
   donateController.index = function(){
     $('#intro-wrapper').hide();
     $('#map').show();
-    initShelterMap();
+    initMap('animal rescue');
   };
 
   module.donateController = donateController;

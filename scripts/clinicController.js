@@ -4,7 +4,7 @@
   clinicController.index = function(){
     $('#intro-wrapper').hide();
     $('#map').show();
-    initShelterMap();
+    initMap('veterinarian');
   };
 
   module.clinicController = clinicController;
