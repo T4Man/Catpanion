@@ -18,15 +18,6 @@ app.get('*', function(request, response) {
   response.sendFile('index.html', { root: '.' });
 });
 
-app.get('/pfapi/pets', requestProxy({
-    url: 'http://api.petfinder.com/pet.find',
-    query: {
-      key: config.pfAPI,
-      format: 'json',
-      output: 'full'
-    }
-}));
-
 app.listen(port, function() {
   console.log('Server started on port ' + port + '!');
 });
