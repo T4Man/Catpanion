@@ -74,9 +74,6 @@ article {
   #burger {
     padding: 0 3% 25% 35%;
   }
-  #map-wrapper {
-    height: 300px;
-  }
 }
 
 @media only screen and (min-width: 529px) {
