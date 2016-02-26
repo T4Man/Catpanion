@@ -20,7 +20,17 @@ function loadMarkers() {
       lat: parseFloat(cur.latitude),
       lng: parseFloat(cur.longitude)
     };
-    shelterView.createMarker(shelterLoc, cur.name, map, infowindow);
+    var markerContent = '';
+    if(cur.name) {
+      markerContent += '<div><strong>' + cur.name + '</strong><br>';
+    }
+    if(cur.address1) {
+      markerContent += cur.address1 + '<br>';
+    }
+    if(cur.address2) {
+      markerContent += cur.address2 + '<br>';
+    }
+    shelterView.createMarker(shelterLoc, markerContent, map, infowindow);
   });
 }
 
