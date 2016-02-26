@@ -1,20 +1,20 @@
-// page('/', startPage.index);
+page('/', startPage.index);
 
-// page('/adoption',
-  // );
-  //shelterView.index);
+page('/adoption',
+  initMap(),
+  navcontroller.adopt);
 
-// page('/donate')
-  //initMap(),
-  //navController.index);
+page('/donate')
+  initMap(),
+  navController.donate);
 
-// page('/clinics')
-  //initMap(),
-  //navController.index);
+page('/clinics')
+  initMap(),
+  navController.clinic);
 
-// page('/nanny')
-  //initMap(),
-  //navController.index);
+page('/nanny')
+  initMap(),
+  navController.sitter);
 
 // page('/Cat-Selector',
   // selectorView.index);
@@ -26,4 +26,4 @@
 // page('/filterCharacteristics',
   // catArticlesController.index);
 
-// page();
+page();
