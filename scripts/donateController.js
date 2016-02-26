@@ -8,4 +8,4 @@
   };
 
   module.donateController = donateController;
-  })(window);
+})(window);

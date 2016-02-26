@@ -8,4 +8,4 @@
   };
 
   module.adoptController = adoptController;
-  })(window);
+})(window);

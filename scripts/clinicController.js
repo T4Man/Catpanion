@@ -8,4 +8,4 @@
   };
 
   module.clinicController = clinicController;
-  })(window);
+})(window);

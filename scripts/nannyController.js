@@ -8,4 +8,4 @@
   };
 
   module.nannyController = nannyController;
-  })(window);
+})(window);
