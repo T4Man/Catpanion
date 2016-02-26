@@ -1,5 +1,5 @@
 (function(module) {
-  startPage = {};
+  var startPage = {};
 
   startPage.index = function(){
     $('#wrapper').hide();

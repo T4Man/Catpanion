@@ -1,4 +1,3 @@
-
 function Breed(opts) {
   Object.keys(opts).forEach(function(e, index, keys) {
     this[e] = opts[e];

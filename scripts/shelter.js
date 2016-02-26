@@ -11,7 +11,6 @@ Shelter.requestShelterList = function(location, callback) {
   var petFinderApi = 'http://api.petfinder.com/shelter.find?format=json&key='+
   petFinderKey + '&location=' + location +'&callback=?';
   $.getJSON(petFinderApi, function(petApiData) {callback(petApiData);})
-  // .done(function(petApiData) {callback(petApiData);})
   .error(function(err) {console.log('Error: ' + JSON.stringify(err));});
 };
 
@@ -40,7 +39,6 @@ function showShelters(){
         Shelter.requestShelterList(zipHere, function(shelterData) {
           var shelterList = shelterData.petfinder.shelters.shelter;
           Shelter.loadAll(shelterList);
-
           Shelter.all.forEach(function(a){
             $('#shelters').append(a.toHtml());
           });
@@ -58,12 +56,3 @@ Shelter.prototype.toHtml = function(){
   var template = Handlebars.compile($('#shelter-template').html());
   return template(this);
 };
-
-$(function(){
-  $('#shelter-list-button').click(function(){
-  console.log('click');
-  $('.breed-articles').hide();
-  $('#breeds').hide();
-  $('#shelters').show();
-  });
-});

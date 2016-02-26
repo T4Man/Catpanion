@@ -18,10 +18,4 @@ $(function(){
 
   breedView.index();
 
-  $('#breed-list-button').click(function(){
-    $('.breed-articles').hide();
-    $('#shelters').hide();
-    $('#breeds').fadeToggle();
-  });
-
 });

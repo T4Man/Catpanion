@@ -4,19 +4,17 @@ var infowindow;
 
 function initMap(searchParam) {
   var burien = {lat: 47.466575, lng: -122.341207};
-      map = new google.maps.Map(document.getElementById('map'), {
+  map = new google.maps.Map(document.getElementById('map'), {
     center: burien,
     zoom: 11
   });
-    infowindow = new google.maps.InfoWindow();
-
+  infowindow = new google.maps.InfoWindow();
   if (navigator.geolocation) {
     navigator.geolocation.getCurrentPosition(function(position) {
       var pos = {
         lat: position.coords.latitude,
         lng: position.coords.longitude
       };
-
       infowindow.setPosition(pos);
       infowindow.setContent('Location found.');
       map.setCenter(pos);
@@ -61,4 +59,3 @@ function createMarker(place) {
     infowindow.open(map, this);
   });
 }
-
