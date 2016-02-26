@@ -26,10 +26,6 @@ Shelter.loadAll = function(list) {
   });
 };
 
-
-
-
-
 function showShelters(){
   if (navigator.geolocation) {
     navigator.geolocation.getCurrentPosition(function(position) {
