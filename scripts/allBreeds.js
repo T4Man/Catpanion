@@ -50,6 +50,7 @@
     showAllCats();
     $('#breedButton').click (function(){
       $('#shelters').hide();
+      $('.scrollup').show();
       $('.breed-articles').fadeToggle(200);
     });
   });
