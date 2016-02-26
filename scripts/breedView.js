@@ -1,8 +1,7 @@
 $(function(){
 
   var breedView = {};
-  $('#breeds').hide();
-  
+
   var renderBreed = function(breed) {
     return $('<li>').text(breed);
   }
